@@ -1,3 +1,5 @@
+###NOT WORKING YET#####
+
 # nemo_clipboard2script
 Nemo context menu action: take script from your clipboard and run it where your nemo folder is open. Also provides a way to delete afterwards if desired.  
 
