@@ -1,0 +1,7 @@
+[Nemo Action]
+Name=Generate Script from Clipboard
+Comment=Generate a script from clipboard content
+Exec=/home/whonow/.local/share/nemo/actions/clipboard2script.sh
+Icon-Name=terminal
+Selection=Any
+Extensions=any;
