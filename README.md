@@ -31,9 +31,7 @@ mv $full_path/clipboard2script.nemo_action /home/$USER/.local/share/nemo/actions
 mv $full_path/delete_clipboard2script.sh /home/$USER/.local/share/nemo/actions/ && \
 mv $full_path/delete_clipboard2script.nemo_action /home/$USER/.local/share/nemo/actions/ && \
 chmod +x /home/$USER/.local/share/nemo/actions/clipboard2script.sh && \
-chmod +x /home/$USER/.local/share/nemo/actions/delete_clipboard2script.sh && \
 chmod +x /home/$USER/.local/share/nemo/actions/clipboard2script.nemo_action && \
-chmod +x /home/$USER/.local/share/nemo/actions/delete_clipboard2script.nemo_action && \
 cd .. && rm -rf $REPO_NAME
 
 ```
