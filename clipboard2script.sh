@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Ensure the directory exists for storing the trigger file
+trigger_dir="/home/whonow/FORMYCODE/clipboard2script"
+mkdir -p "$trigger_dir"
+
+# Path to store the generated script path
+trigger_file="$trigger_dir/works.txt"
+
 # Function to capture script from clipboard
 capture_clipboard() {
     script_content=$(xclip -o)  # Capture clipboard content using xclip
@@ -33,9 +40,9 @@ fi
 # Write the script content to the file
 echo "$script_content" > "$filename"
 
-# Store the full path of the generated script for potential deletion
+# Store the full path of the generated script in the new trigger file
 full_path=$(pwd)/"$filename"
-echo "$full_path" > /tmp/generated_script_path.txt
+echo "$full_path" > "$trigger_file"
 
 # Make the generated script executable
 chmod +x "$filename"
@@ -47,17 +54,6 @@ else
     ./"$filename"
 fi
 
-# Ask the user if they want to delete the script
-read -p "Do you want to delete the generated script? (y/n): " confirm_delete
-
-if [[ "$confirm_delete" == "y" ]]; then
-    # Delete the script if confirmed by the user
-    rm -f "$full_path"
-    rm -f /tmp/generated_script_path.txt
-    echo "The script has been deleted."
-else
-    echo "The script was not deleted and remains at $full_path"
-fi
-
 # Confirm completion
 echo "The script $filename has been created, made executable, and run."
+echo "Script path stored in $trigger_file"
